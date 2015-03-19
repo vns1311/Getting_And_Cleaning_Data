@@ -33,7 +33,7 @@ meanstd <- featureset$V2[grep("(mean|std)\\(\\)",featureset$V2)]
 selection<-c(as.character(meanstd), "subject", "activity" )
 
 finaldataset<-subset(finaldataset,select=selection)
-
+finaldataset[,68] <- activityset[finaldataset[,68],2] #68th column has activity values
 
 # 3. Uses descriptive activity names to name the activities in the data set
 activityset<-read.table("./activity_labels.txt",header = FALSE)
@@ -50,9 +50,12 @@ names(finaldataset)<-gsub("BodyBody", "body", names(finaldataset))
 
 #5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject
 library(plyr);
-tidydataset<-aggregate(finaldataset,by=list(finaldataset$subject,finaldataset$activity),FUN = mean)
+tidydataset<-aggregate(. ~subject + activity, Data, mean)
+tidydataset[,2] <- activityset[tidydataset[,2],2]  #2nd column has activity values
 tidydataset<-tidydataset[order(tidydataset$subject,tidydataset$activity),]
 write.table(tidydataset, file = "tidydata.txt",row.name=FALSE)
+
+
 
 
 
