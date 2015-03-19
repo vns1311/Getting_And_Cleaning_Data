@@ -1,4 +1,4 @@
-This is a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data.
+This is a code book that describes the variables, the data, and any transformations or work that was performed to clean up the data.
 
 ##The data source
 
@@ -36,10 +36,19 @@ The following files are available for the train and test data. Their description
 * 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
 
-Tasks performed in the run_analysis.R script : 
+Tasks to be performed in the run_analysis.R script : 
 
 * Merges the training and the test sets to create one data set.
 * Extracts only the measurements on the mean and standard deviation for each measurement.
 * Uses descriptive activity names to name the activities in the data set
 * Appropriately labels the data set with descriptive activity names.
 * Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+The script run_analysis.R performs the 5 steps described in the following way:
+
+* First, all the similar data is merged using the rbind() function.
+* Then, only those columns with the mean and standard deviation measures are taken from the whole dataset. 
+* After extracting these columns, they are given the correct names, which can be obtained  from features.txt.
+* Since activity data is addressed with values 1:6, we replace the values with the corresponding labels which can be obtained from activity_labels.txt.
+* On the whole dataset, those columns with vague column names are corrected. For eg: t is rplaced with time, gyro is replaced with gyroscope
+* Finally, we generate a new dataset with all the average measures for each subject and activity type (30 subjects * 6 activities = 180 rows). The output file is called tidydata.txt.
