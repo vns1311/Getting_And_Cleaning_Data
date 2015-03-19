@@ -16,13 +16,14 @@ You should create one R script called run_analysis.R that does the following.
 * Appropriately labels the data set with descriptive activity names.
 * Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
-###What you find in this repository
+###What you will find in this repository
 
 * CodeBook.md: information about raw and tidy data set and elaboration made to transform them
 * README.md: this file
 * run_analysis.R: R script to transform raw data set in a tidy one
 
 ###How to create the tidy data set
-* Download the source data from the link  and put into a folder on your local drive. You'll have a UCI HAR Dataset folder.
+* Download the source data from the link  and place it your local drive. You will get a UCI HAR Dataset folder.
 * Place the  run_analysis.R in the UCI HAR Dataset, then set it as your working directory using setwd() function in RStudio.
-* Run source("run_analysis.R"), then it will generate a new file tidydata.txt in your working directory.
+* Run the run_analysis.R using the cmd - source("run_analysis.R")
+* It will generate a new file tidydata.txt in your working directory.
