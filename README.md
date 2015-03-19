@@ -18,9 +18,9 @@ You should create one R script called run_analysis.R that does the following.
 
 ###What you find in this repository
 
-CodeBook.md: information about raw and tidy data set and elaboration made to transform them
-README.md: this file
-run_analysis.R: R script to transform raw data set in a tidy one
+* CodeBook.md: information about raw and tidy data set and elaboration made to transform them
+* README.md: this file
+* run_analysis.R: R script to transform raw data set in a tidy one
 
 ###How to create the tidy data set
 * Download the source data from the link  and put into a folder on your local drive. You'll have a UCI HAR Dataset folder.
